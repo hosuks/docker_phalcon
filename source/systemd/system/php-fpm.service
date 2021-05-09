@@ -1,0 +1,10 @@
+[Unit]
+Description=PHP FastCGI process manager
+After=local-fs.target network.target nginx.service
+
+[Service]
+ExecStart=/usr/local/php/sbin/php-fpm --fpm-config /usr/local/php/etc/php-fpm.conf
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
